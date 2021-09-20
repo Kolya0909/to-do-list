@@ -1,0 +1,17 @@
+<div class="form__signup">
+
+  <%= form_for :users,   url: tasks_path do |f|%>
+    <%=f.label :email %>
+    <%=f.text_field :email, class: 'form-control'%>
+    <%=f.label :name %>
+    <%=f.email_field :name, class: 'form-control' %>
+    <%=f.label :password %>
+    <%= f.password_field :password, class: 'form-control'%>
+    <%=f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: 'form-control'%>
+    <div class="form__signup-btn">
+      <%=f.submit "Register", class: 'btn btn-primary signup-btn'%>
+    </div>
+  <%end %>
+
+</div>

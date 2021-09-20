@@ -1,0 +1,37 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.header{
+  background-color: #EFEFEF;
+  .header__inner{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+  }
+}
+
+.modal__signup{
+  position: absolute;
+  top:-100%;
+  left: 0;
+  right: 0;
+  padding: 15px 25px 20px;
+  display: flex;
+  justify-content: center;
+  transition: .5s all;
+}
+
+.modal__signup-active{
+  top: 25%;
+}
+
+.form__signup{
+  .form__signup-btn{
+      margin-top: 25px;
+      text-align: center;
+     .signup-btn{
+       width: 100%;
+     }
+  }
+}
