@@ -10,8 +10,23 @@
     align-items: center;
   }
 }
-
+.modal__back{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.5);
+  opacity: 0;
+  transition: .5s all;
+  pointer-events: none;
+}
+.modal__back-active{
+  opacity: 1;
+}
 .modal__signup{
+  background-color: #CCCCCC;
+  width: 320px;
   position: absolute;
   top:-100%;
   left: 0;
@@ -20,6 +35,10 @@
   display: flex;
   justify-content: center;
   transition: .5s all;
+  margin: 0 auto;
+  z-index: 20;
+  pointer-events: visible;
+  border-radius:15px;
 }
 
 .modal__signup-active{
