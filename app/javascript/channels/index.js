@@ -14,4 +14,13 @@ window.onload = () =>{
         document.querySelector('.modal__signup').classList.remove('modal__signup-active')
         document.querySelector('.modal__back').classList.remove('modal__back-active')
     })
+    document.querySelector('.login__btn').addEventListener('click', ()=>{
+        document.querySelector('.modal__login').classList.add('modal__login-active')
+        document.querySelector('.modal__back').classList.add('modal__back-active')
+
+    })
+    document.querySelector('.close__btn2').addEventListener('click',()=>{
+        document.querySelector('.modal__login').classList.remove('modal__login-active')
+        document.querySelector('.modal__back').classList.remove('modal__back-active')
+    })
 }

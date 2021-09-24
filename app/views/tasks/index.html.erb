@@ -1,8 +1,20 @@
+<%if flash!=nil %>
+  <%flash.each do |key, value| %>
+    <%=value %>
+  <%end %>
+<%end %>
+
 <div class="modal__back">
   <div class="modal__signup">
       <span class="close__btn" aria-hidden="true">&times;</span>
     <%=render 'users/form' %>
   </div>
+  <div class="modal__login">
+    <span class="close__btn2" aria-hidden="true">&times;</span>
+    <%=render 'sessions/form' %>
+  </div>
 </div>
+
+
 
 

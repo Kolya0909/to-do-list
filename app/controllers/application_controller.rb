@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include Authenticate
 
+  include Authenticate
 
 end
