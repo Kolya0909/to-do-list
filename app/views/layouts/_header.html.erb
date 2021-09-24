@@ -3,12 +3,12 @@
     <div class="header__inner">
       <div class="header__logo"></div>
       <div class="header__links">
-
+        <%if !user_signed_in? %>
         <div class="login__btn btn btn-light">Log In</div>
         <div class="signup__btn btn btn-dark">Sign Up</div>
-
-          <div class="logout__btn btn btn-danger"><%=current_user.name_or_email %></div>
-
+       <%else%>
+          <%=link_to "Log Out", session_path(current_user.id), method: :delete, class: 'logout__btn btn btn-danger'%>
+        <%end %>
       </div>
     </div>
   </div>

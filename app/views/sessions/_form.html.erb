@@ -1,17 +1,13 @@
 <div class="form__signup">
 
 
-  <%= form_for :session, url: sessions_path do |f|%>
+  <%= form_with url: sessions_path do |f|%>
     <%=f.label :email %>
     <%=f.email_field :email, class: 'form-control'%>
     <%=f.label :name %>
-    <%=f.text_field :name, class: 'form-control' %>
-    <%=f.label :password %>
     <%= f.password_field :password, class: 'form-control'%>
-    <%=f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: 'form-control'%>
     <div class="form__signup-btn">
-      <%=f.submit "Register", class: 'btn btn-primary signup-btn'%>
+      <%=f.submit "Log In", class: 'btn btn-primary signup-btn'%>
     </div>
   <%end %>
 

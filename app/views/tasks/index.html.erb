@@ -4,6 +4,11 @@
   <%end %>
 <%end %>
 
+<%if user_signed_in? %>
+<%= "hello #{current_user.name_or_email}" %>
+  <%end %>
+
+
 <div class="modal__back">
   <div class="modal__signup">
       <span class="close__btn" aria-hidden="true">&times;</span>
