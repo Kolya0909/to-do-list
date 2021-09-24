@@ -16,16 +16,17 @@
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,.7);
   opacity: 0;
   transition: .5s all;
   pointer-events: none;
 }
 .modal__back-active{
   opacity: 1;
+  z-index: 10 ;
 }
 .modal__signup{
-  background-color: #CCCCCC;
+  background-color: white;
   width: 320px;
   position: absolute;
   top:-100%;
@@ -39,6 +40,12 @@
   z-index: 20;
   pointer-events: visible;
   border-radius:15px;
+  .close__btn{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+  }
 }
 
 .modal__signup-active{

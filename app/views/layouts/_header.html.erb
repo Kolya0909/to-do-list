@@ -3,8 +3,12 @@
     <div class="header__inner">
       <div class="header__logo"></div>
       <div class="header__links">
+        <%if !user_signed_in? %>
         <div class="login__btn btn btn-light">Log In</div>
         <div class="signup__btn btn btn-dark">Sign Up</div>
+          <%else  %>
+          <div class="logout__btn btn btn-dark"><%=current_user.name_or_email %></div>
+          <%end %>
       </div>
     </div>
   </div>
