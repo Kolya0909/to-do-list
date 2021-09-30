@@ -1,0 +1,20 @@
+
+<div class="block" style="max-width: 425px; margin: 0 auto">
+  <br>
+  <h3>Please add new task!</h3>
+  <br>
+  <%=form_for [@user, @user.tasks.build], url: tasks_path do |f| %>
+    <%=f.label :title %>
+    <%=f.text_field :title, class:'form-control' %>
+    <%=f.label :priority %>
+    <%=f.select :priority, @completed, {},  {class:'form-select'} %>
+    <%=f.label :completed %>
+    <%=f.check_box :completed  %>
+    <br>
+
+    <div class="task__btn-block" style="text-align: right">
+      <%= f.submit "Create task", class: 'btn btn-success' %>
+    </div>
+
+  <% end %>
+</div>
