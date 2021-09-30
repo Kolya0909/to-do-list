@@ -8,7 +8,11 @@ module Authenticate
     end
 
     def user_signed_in?
-      current_user.present?
+      if current_user.present?
+        true
+      else
+        false
+      end
     end
 
     helper_method :current_user, :user_signed_in?

@@ -12,9 +12,15 @@
   <br>
   <div class="task__inner">
 
-    <div class="all_task"></div>
+    <div class="all_task">
 
-    <% %>
+      <% @task.each do |task| %>
+      <%=task.title %> <br>
+        <%=task.priority %> <br>
+      <%end %>
+
+    </div>
+
 
     <div class="add_new_task">
       <%=render 'tasks/new' %>

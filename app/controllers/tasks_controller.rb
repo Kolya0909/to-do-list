@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
 
 
+
   def index
     @user = current_user
     @completed = [
@@ -8,7 +9,9 @@ class TasksController < ApplicationController
       ['Next',2],
       ['Now',3]
     ]
-    @task = Task.all
+    if user_signed_in?
+      @task = Task.where(user_id: @user.id).order('priority DESC')
+    end
   end
 
   def new
