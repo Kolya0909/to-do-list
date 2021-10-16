@@ -7,7 +7,7 @@
     <%=f.label :title %>
     <%=f.text_field :title, class:'form-control' %>
     <%=f.label :priority %>
-    <%=f.select :priority, @completed, {},  {class:'form-select'} %>
+    <%=f.select :priority, $completed, {},  {class:'form-select'} %>
     <%=f.label :completed %>
     <%=f.check_box :completed  %>
     <br>

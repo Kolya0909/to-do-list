@@ -2,8 +2,8 @@
 
 <%if user_signed_in? %>
   <br>
-  <div class="alert alert-info" role="alert"><%= "hello #{current_user.name_or_email}" %></div>
-  <br>
+  <%# <div class="alert alert-info" role="alert"><%= "hello #{current_user.name_or_email}" %>
+  <br> 
 
   <%if flash!=nil %>
   <%flash.each do |key, value| %>

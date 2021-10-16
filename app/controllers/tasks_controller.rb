@@ -4,11 +4,6 @@ class TasksController < ApplicationController
 
   def index
     @user = current_user
-    @completed = [
-      ['Later',1],
-      ['Next',2],
-      ['Now',3]
-    ]
     if user_signed_in?
       @task = Task.where(user_id: @user.id).order('priority DESC')
     end
@@ -19,11 +14,6 @@ class TasksController < ApplicationController
   end
 
   def create
-    @completed = [
-      ['Later',1],
-      ['Next',2],
-      ['Now',3]
-    ]
     @user = current_user
     @task = @user.tasks.create(task_params)
     if @task.save
@@ -42,6 +32,14 @@ class TasksController < ApplicationController
   end
 
   def update
+      @task = Task.find(params[:id])
+      if @task.update(task_params)
+      flash[:success] = "Task with id = #{@task.id} was updated"
+      redirect_to tasks_path
+      else
+        redirect_to request.referrer
+        flash[:danger] = "Title not must be empty, and must be more than 5 characters"
+      end
       
   end
 
