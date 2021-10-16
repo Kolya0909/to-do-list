@@ -3,7 +3,7 @@ class Task < ApplicationRecord
   belongs_to :user
 
   def complete!
-    self.complete = true
+    self.completed = true
     save
   end
 
