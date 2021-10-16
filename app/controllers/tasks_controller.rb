@@ -13,7 +13,7 @@ class TasksController < ApplicationController
       @task = Task.where(user_id: @user.id).order('priority DESC')
     end
   end
-
+  
   def new
 
   end
@@ -30,17 +30,25 @@ class TasksController < ApplicationController
       flash[:success] = "Task save"
       redirect_to root_path
     else
-      render :index
+      redirect_to request.referrer
+      flash[:danger] = "Title not must be empty, and must be more than 5 characters"
     end
 
   end
 
-  def update
+  def edit
+      @user = current_user
+      @task = Task.find(params[:id])
+  end
 
+  def update
+      
   end
 
   def destroy
-
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to tasks_path
   end
 
   private

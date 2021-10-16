@@ -1,22 +1,33 @@
-<%if flash!=nil %>
-  <%flash.each do |key, value| %>
-    <br>
-    <div class="alert alert-success" role="alert"><%=value %></div>
-    <br>
-  <%end %>
-<%end %>
+
 
 <%if user_signed_in? %>
   <br>
   <div class="alert alert-info" role="alert"><%= "hello #{current_user.name_or_email}" %></div>
   <br>
+
+  <%if flash!=nil %>
+  <%flash.each do |key, value| %>
+    <br>
+    <%if key == 'danger' %>
+    <div class="alert alert-danger" role="alert"><%=value %></div>
+    <%elsif key == 'success'%>
+    <div class="alert alert-success" role="alert"><%=value %></div>
+    <% end %>
+    <br>
+  <%end %>
+  <%end %>
+
   <div class="task__inner">
 
     <div class="all_task">
 
       <% @task.each do |task| %>
-      <%=task.title %> <br>
-        <%=task.priority %> <br>
+      <div class="task__item">
+      <%=task.title %>   
+      <%= link_to content_tag( :div, 'edit', :class=>'btn btn-warning'), edit_task_path(task) %> 
+      <%= link_to content_tag( :div, 'delete', :class=>'btn btn-danger'), task_path(task), method: :delete %> 
+      <%= link_to content_tag( :div, 'done', :class=>'btn btn-success'), edit_task_path(task) %> 
+      </div>
       <%end %>
 
     </div>

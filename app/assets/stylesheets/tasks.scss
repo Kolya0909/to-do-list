@@ -62,3 +62,9 @@
      }
   }
 }
+.task__item{
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+  flex-direction: row;
+}
