@@ -6,7 +6,9 @@
   <%=form_for [@user, @user.tasks.build], url: tasks_path do |f| %>
     <%=f.label :title %>
     <%=f.text_field :title, class:'form-control' %>
-    <%=f.label :priority %>
+    <%=f.label :categories %>
+    <%=f.select :category_id, $categories, {},  {class:'form-select'} %>
+     <%=f.label :priority %>
     <%=f.select :priority, $completed, {},  {class:'form-select'} %>
     <%=f.label :completed %>
     <%=f.check_box :completed  %>

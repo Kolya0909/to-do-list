@@ -7,6 +7,21 @@ class TasksController < ApplicationController
     if user_signed_in?
       @task = Task.where(user_id: @user.id).order('priority DESC')
     end
+
+    def create_categories_array
+        @categories = Category.all
+        $categories = []
+        @categories.each do |category|
+        @one_category = []
+        @one_category.push(category.category_name)
+        @one_category.push(category.id)
+        $categories.push(@one_category)
+      end
+      $categories
+    end
+    create_categories_array()
+    
+  
   end
   
   def new
@@ -58,7 +73,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title,:priority,:completed, :user_id).merge(date: Time.now.strftime("%d.%m.%Y"))
+    params.require(:task).permit(:title,:priority,:completed, :user_id, :category_id).merge(date: Time.now.strftime("%d.%m.%Y"))
   end
 
 
