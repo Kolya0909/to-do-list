@@ -58,7 +58,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title,:priority,:completed, :user_id)
+    params.require(:task).permit(:title,:priority,:completed, :user_id).merge(date: Time.now.strftime("%d.%m.%Y"))
   end
 
 

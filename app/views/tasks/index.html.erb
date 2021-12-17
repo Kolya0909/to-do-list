@@ -24,24 +24,19 @@
       <% @task.each do |task| %>
       <%if task.completed == true%>
       <div class="task__item">
-      <div class="task__title"><%=task.title %></div>   
+      <div class="task__title"><%=task.title %></div><br>
       <%= link_to content_tag( :div, 'edit', :class=>'btn btn-warning'), edit_task_path(task) %> 
       <%= link_to content_tag( :div, 'delete', :class=>'btn btn-danger'), task_path(task), method: :delete %> 
       </div>
+      <div class="task_date"><%=task.date%></div>
       <%else%>
       <div class="task__item">
-      <%if task.priority == 3%>
-        <%='You must do this now'%><br>
-        <%elsif task.priority == 2%>
-        <%='You must do this next'%><br>
-        <%elsif task.priority == 1%>
-        <%='You must do this later'%><br>
-      <%end%>
-      <%=task.title %>  
+      <%=task.title %> 
       <%= link_to content_tag( :div, 'edit', :class=>'btn btn-warning'), edit_task_path(task) %> 
       <%= link_to content_tag( :div, 'delete', :class=>'btn btn-danger'), task_path(task), method: :delete %> 
       <%= link_to content_tag( :div, 'done', :class=>'btn btn-success'), complete_task_path(task), data: { method: :put } %> 
       </div>
+      <div class="task_date"><%=task.date%></div>
       <%end%>
       
       <%end %>
