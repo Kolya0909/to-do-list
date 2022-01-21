@@ -19,4 +19,12 @@
     </div>
 
   <% end %>
+
+<%@tasks = @cat.tasks%>
+<%@tasks.each do |task| %>
+<%=task.title%>
+<%=@cat.category_name%>
+<%end%>
+<hr>
+
 </div>

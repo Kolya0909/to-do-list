@@ -20,8 +20,7 @@ class TasksController < ApplicationController
       $categories
     end
     create_categories_array()
-    
-  
+    @cat = Category.find(1)
   end
   
   def new
